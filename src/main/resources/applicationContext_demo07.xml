@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+  <!-- 
+  	context:component-scan 指定Spring IoC 容器扫描
+  	
+  	属性:
+  	base-package="com.ek.spring.demo7_annotation" 管理哪个包下的子包和类
+  	resource-pattern="repository/*.class" 这个属性可以指定扫描的资源
+  	
+  	子节点:(这些子节点可以有若干个)
+  	根据annotation不包含: <context:exclude-filter type="annotation" expression="com.ek.spring.demo7_annotation.repository"/>
+    根据annotation只包含: <context:include-filter type="annotation" expression="com.ek.spring.demo7_annotation.repository"/>
+    用只包含的子节点时 要设置component-scan的属性 use-default-filters="false" 默认是true
+    除了根据注解 type="annotation" 还可以根据类名 type="assignable" 
+   -->
+   
+   
+  <context:component-scan  base-package="com.ek.spring.demo07_annotation">
+  	 
+  </context:component-scan>
+  
+</beans>
+
+

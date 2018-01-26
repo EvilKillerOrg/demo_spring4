@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+  <!-- set注入 -->
+  <bean id="setin" class="com.ek.spring.demo02_bean.SetterInjection">
+    <property name="username" value="ek"/>
+	<property name="age" value="29"/>
+  </bean>
+  
+  <!-- 构造注入 可以按顺序index 按名称name 按类型type 锁定构造器的参数-->
+  <bean id="constin1" class="com.ek.spring.demo02_bean.ConstructorInjection"></bean>
+  
+  <bean id="constin2" class="com.ek.spring.demo02_bean.ConstructorInjection">
+  	<constructor-arg name="age" index="0" value="19"></constructor-arg>
+  </bean>
+  
+  <bean id="constin3" class="com.ek.spring.demo02_bean.ConstructorInjection">
+  	<constructor-arg  value="ek" type="java.lang.String"></constructor-arg>
+  	<constructor-arg  value="19" type="java.lang.Integer"></constructor-arg>
+  </bean>
+  
+  
+  <!-- P标签,注入对象和集合 -->
+  <bean id="userinfo1" class="com.ek.spring.demo02_bean.UserInfo"  p:username="ek1" p:age="17"/> 
+  <bean id="userinfo2" class="com.ek.spring.demo02_bean.UserInfo"  p:username="ek2" p:age="18"/> 
+  <bean id="userinfo3" class="com.ek.spring.demo02_bean.UserInfo"  p:username="ek3" p:age="19"/> 
+  
+  <util:list id="userList">  
+  	<ref bean="userinfo1"/>
+  	<ref bean="userinfo2"/>
+  	<ref bean="userinfo3"/>
+  </util:list>
+  
+  <bean id="dept" class="com.ek.spring.demo02_bean.Dept">
+  	<property name="deptName" value="PM"></property>
+  	<property name="userinfo" ref="userinfo1"></property>
+  	<property name="userList" ref="userList"></property>
+  </bean>
+</beans>
+
+

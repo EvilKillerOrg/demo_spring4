@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+ <!-- 在配置文件中设置constructor-arg的值不同 就可以通过工厂方法获得 不同的实例 -->
+
+
+  <!-- 静态工厂配置Bean -->
+  <bean id="userinfo1" class="com.ek.spring.demo06_factoryBean.StaticUserInfoFactory" factory-method="getUserInfo">
+  	<constructor-arg value="ek"></constructor-arg>
+  </bean>
+  
+  
+  
+  <!-- 实例工厂实例化Bean  1.先创建一个工厂的实例-->
+  <bean id="userFactory" class="com.ek.spring.demo06_factoryBean.InstanceUserInfoFactory"></bean>
+  <!-- 实例工厂实例化Bean  1.通过工厂的实例配置Bean-->
+  <bean id="userinfo2" factory-bean="userFactory" factory-method="getUserInfo">
+  	<constructor-arg value="mike"></constructor-arg>
+  </bean>
+  
+</beans>
+
+

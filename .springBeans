@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.7.3.201602250914-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/main/resources/applicationContext_demo01.xml</config>
+		<config>src/main/resources/applicationContext_demo02.xml</config>
+		<config>src/main/resources/applicationContext_demo03.xml</config>
+		<config>src/main/resources/applicationContext_demo04.xml</config>
+		<config>src/main/resources/applicationContext_demo05.xml</config>
+		<config>src/main/resources/applicationContext_demo06.xml</config>
+		<config>src/main/resources/applicationContext_demo07.xml</config>
+		<config>src/main/resources/applicationContext_demo10.xml</config>
+		<config>src/main/resources/applicationContext_demo11.xml</config>
+		<config>src/main/resources/applicationContext_demo12.xml</config>
+		<config>src/main/resources/applicationContext_demo13.xml</config>
+		<config>src/main/resources/applicationContext_demo14.xml</config>
+	</configs>
+	<autoconfigs>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>
